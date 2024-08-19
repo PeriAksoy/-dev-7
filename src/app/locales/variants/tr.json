@@ -1,0 +1,22 @@
+{
+    "code":"tr",
+     "translations":{
+        "removefavorites":"Favorilerden çıkar",
+        "removebookcase":"Kitaplıktan çıkar",
+        "emailadress":"E-mail adres",
+        "dateofbirth":"Doğum tarihi",
+        "username":"Kullanıcı adı",
+        "namesurname":"Ad-Soyad",
+        "favorites":"Favoriler",
+        "bookcase":"Kitaplık",
+        "login":"Giriş yap",
+        "password":"Şifre",
+        "profile":"Profil",
+        "signup":"Üye ol",
+        "home":"Anasayfa",
+        "edit":"Düzenle",
+        "delete":"Sil",
+        "add":"Ekle"
+     }
+ 
+ }

@@ -1,0 +1,22 @@
+{
+   "code":"en",
+    "translations":{
+        "removefavorites":"Remove from favorites",
+        "removebookcase":"Remove from bookcase",
+        "dateofbirth":"Date of birth",
+        "emailadress":"E-mail adress",
+        "namesurname":"Name-Surname",
+        "favorites":"Favorites",
+        "bookcase":"Bookcase",
+        "username":"Username",
+        "password":"Password",
+        "profile":"Profile",
+        "signup":"Sign up",
+        "delete":"Delete",
+        "login":"Log in",
+        "home":"Home",
+        "edit":"Edit",
+        "add":"Add"
+    }
+
+}
