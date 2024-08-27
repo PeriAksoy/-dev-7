@@ -1,6 +1,7 @@
 {
     "code":"tr",
      "translations":{
+        "enterthenameofthebook":"Kitap adı girin:",
         "removefavorites":"Favorilerden çıkar",
         "removebookcase":"Kitaplıktan çıkar",
         "emailadress":"E-mail adres",

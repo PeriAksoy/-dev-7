@@ -11,7 +11,7 @@ const useStyles = createUseStyles({
         height: "800px",
         width: '100%',
     },
-    loginCard:{
+    signCard:{
         backgroundColor: ({ theme }) => theme.colors.cardwhite,
         justifyContent:"center",
         flexDirection:"column",

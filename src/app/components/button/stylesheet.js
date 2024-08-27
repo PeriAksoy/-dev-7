@@ -1,12 +1,10 @@
 import { createUseStyles } from "react-jss";
 import {clickEvent} from "../../themes/helpers"
 
-
-
 const useStyle =  createUseStyles ({
     container:{
         display:"flex",
-        flexDirection:"column",
+        alignItems:"center",
     },
     header:{
         backgroundColor:({theme}) => theme.colors.btn,
@@ -25,7 +23,38 @@ const useStyle =  createUseStyles ({
             fontSize:"20px",
             color:"white",
         },
+    },
+    remove:{
+        backgroundColor: ({ theme }) => theme.colors.btn,
+        border: "0px solid #FFFFFF",
+        borderRadius: "10px",
+        textAlign:"center",
+        height: "50px",
+        width: "200px", 
+         ...clickEvent(),
+        "& span": {
+            fontSize: "18px",
+            color:"white",
+        },
+    icon:{
+        backgroundColor:"gold",
+        fontSize:"20px"
     }
+    },
+    edit:{
+        backgroundColor: ({ theme }) => theme.colors.btn,
+        border: "0px solid #FFFFFF",
+        borderRadius: "10px",
+        textAlign: "center",
+        height: "50px",
+        width: "100px", 
+        ...clickEvent(),
+        " & span":{
+            fontSize: "18px",
+            color:"white",
+        },
+    },
+
 },
 {name:"Component-Button"}
 );

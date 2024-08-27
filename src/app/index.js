@@ -1,20 +1,20 @@
-
-import Header from  "./components/header/Header";
 import React from "react";
+import { LanguageProvider } from "./context/LanguageContext";
 import { ThemeProvider } from "./context/ThemeContext";
+import Header from "./components/header/Header";
 import useStyles from "./stylesheet";
 import Navigation from "./navigations";
-import { LanguageProvider } from "./context/LanguageContext";
 
 function App() {
   useStyles();
-  return <div>
+  return (
     <ThemeProvider>
-    <LanguageProvider>
-    <Header/>
-    <Navigation/> 
-    </LanguageProvider>
+      <LanguageProvider>
+        <Header/>
+        <Navigation />
+      </LanguageProvider>
     </ThemeProvider>
-  </div>
+  );
 }
+
 export default App;

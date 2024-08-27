@@ -4,7 +4,7 @@ const colors = {
   profilecard:"#F0F0F0",
   background:"#F8F8F8",
   cardwhite:"#F0F0F0",
-  addbutton:"#2F5175",
+  addbutton:"#007BFF",
   cardtext:"#000000",
   header:"#1E5186",
   card:"#FFFFFF",

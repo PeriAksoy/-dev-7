@@ -6,27 +6,27 @@ const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
 
-    const initialLanguage = localStorage.getItem("language") === "en" ? en : tr;
-    const [language, setLanguage] = useState(initialLanguage);
+  const initialLanguage = localStorage.getItem("language") === "en" ? en : tr;
+  const [language, setLanguage] = useState(initialLanguage);
 
-    useEffect(() => {
-      localStorage.setItem("language", language.code || "en");
-    }, [language]);
+  useEffect(() => {
+    localStorage.setItem("language", language.code || "en");
+  }, [language]);
 
-    const toggleLanguage = () => {
-      setLanguage(language.code === "en" ? tr : en);
-    };
-    
-    const values = {
-      language,
-      toggleLanguage,
-    };
+  const toggleLanguage = () => {
+    setLanguage(language.code === "en" ? tr : en);
+  };
+  
+  const values = {
+    language,
+    toggleLanguage,
+  };
 
-    return (
-      <LanguageContext.Provider value={values}>
-        {children}
-      </LanguageContext.Provider>
-    );
+  return (
+    <LanguageContext.Provider value={values}>
+      {children}
+    </LanguageContext.Provider>
+  );
     
 };
 

@@ -1,4 +1,3 @@
-
 import {
     createUseStyles
 } from "react-jss";
@@ -25,7 +24,7 @@ const useStyles = createUseStyles({
         marginBottom:"30px",
         marginLeft:"50px",
     },
-    context:{
+    content:{
         alignItems:"center",
         flexDirection:"row",
         display:"flex",

@@ -1,6 +1,7 @@
 {
    "code":"en",
     "translations":{
+        "enterthenameofthebook":"Enter the name of the book:",
         "removefavorites":"Remove from favorites",
         "removebookcase":"Remove from bookcase",
         "dateofbirth":"Date of birth",

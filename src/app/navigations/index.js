@@ -3,11 +3,11 @@ import{
   Routes
 }from "react-router-dom";
 
-import { Home , Profile , Books , Favorites , Signup , Login } from "../pages";
+import { Home , Profile , Books , Favorites , Signup , Login} from "../pages";
 
 const Navigation = ()=>{
 
-    return <Routes>
+  return <Routes>
     <Route
       path="/"
       element={<Home/>}
@@ -16,22 +16,22 @@ const Navigation = ()=>{
       path="/profile"
       element={<Profile/>}
     />
-      <Route
+    <Route
       path="/books"
       element={<Books/>}
     />
-      <Route
+    <Route
       path="/favorites"
       element={<Favorites/>}
     />
-      <Route
+    <Route
       path="/signup"
       element={<Signup/>}
     />
-      <Route
+    <Route
       path="/login"
       element={<Login/>}
     />
-    </Routes>
+  </Routes>
 };
 export default Navigation;
