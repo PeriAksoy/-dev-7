@@ -1,17 +1,20 @@
 import React from "react";
 import { LanguageProvider } from "./context/LanguageContext";
 import { ThemeProvider } from "./context/ThemeContext";
+import { AuthProvider } from "./context/AuthContext";
 import Header from "./components/header/Header";
-import useStyles from "./stylesheet";
 import Navigation from "./navigations";
+import useStyles from "./stylesheet";
 
 function App() {
   useStyles();
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <Header/>
-        <Navigation />
+        <AuthProvider>
+         <Header/>
+          <Navigation />  
+        </AuthProvider>
       </LanguageProvider>
     </ThemeProvider>
   );

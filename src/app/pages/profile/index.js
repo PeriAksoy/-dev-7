@@ -3,7 +3,7 @@ import { useTheme } from "../../context/ThemeContext";
 import { useLanguage } from "../../context/LanguageContext";
 import useStyles from "./stylesheet";
 import ProfileCard from "../../components/profilecard/ProfileCard";
-
+import axios from "axios";
 
 const Profile = () =>{
     
@@ -17,6 +17,9 @@ const Profile = () =>{
             <div>
             <div className={classes.name}>AD-SOYAD</div>
             <div className={classes.username}>KULLANICI ADI</div>    
+            </div>
+            <div className={classes.btndiv}>
+              <button className={classes.logoutbtn}>{language.translations.logout}</button>
             </div>
         </div>
         <div className={classes.textcard}>

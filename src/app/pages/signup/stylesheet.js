@@ -1,35 +1,46 @@
+import { red } from "@mui/material/colors";
 import { createUseStyles } from "react-jss";
 
 
 const useStyles = createUseStyles({
     container:{
         backgroundColor: ({ theme }) => theme.colors.background,
-        justifyContent: 'center',
-        flexDirection: 'column',
-        alignItems: 'center',
-        display: 'flex',
-        height: "800px",
+        justifyContent: "center",
+        flexDirection: "column",
+        alignItems: "center",
+        display: "flex",
+        height: "100vh",
         width: '100%',
     },
     signCard:{
         backgroundColor: ({ theme }) => theme.colors.cardwhite,
         justifyContent:"center",
+        justifyContent:"center",
         flexDirection:"column",
         alignItems:"center",
-        justifyContent:"center",
         borderRadius:"30px",
         textAlign:"left",
-        height:"600px",
         display:"flex",
+        padding:"40px",
+        height:"650px",
         width:"450px",
         gap:"15px",
-        padding:"20px"
     },
     input :{
         borderRadius:"5px",
         textAlign:"start",
         height:"50px",
         width:"300px",
+    },
+    inputError:{
+        fontSize:"13px",
+        height:"2px",
+        color:"red",
+    },
+    label:{
+        textAlign:"left",
+        display:"block",
+        width:"300px"
     }
      
 });

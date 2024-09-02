@@ -3,8 +3,8 @@ import {clickEvent} from "../../themes/helpers"
 
 const useStyle =  createUseStyles ({
     container:{
-        display:"flex",
         alignItems:"center",
+        display:"flex",
     },
     header:{
         backgroundColor:({theme}) => theme.colors.btn,
@@ -36,10 +36,6 @@ const useStyle =  createUseStyles ({
             fontSize: "18px",
             color:"white",
         },
-    icon:{
-        backgroundColor:"gold",
-        fontSize:"20px"
-    }
     },
     edit:{
         backgroundColor: ({ theme }) => theme.colors.btn,
@@ -54,6 +50,25 @@ const useStyle =  createUseStyles ({
             color:"white",
         },
     },
+    addfav:{
+        backgroundColor: ({ theme }) => theme.colors.btn,
+        border: "0px solid #FFFFFF",
+        borderRadius: "10px",
+        textAlign:"center",
+        height: "50px",
+        width: "200px", 
+         ...clickEvent(),
+        "& span": {
+            marginLeft:"10px",
+            fontSize: "18px",
+            color:"white",
+        },
+    },
+    icon:{
+        fontSize:"20px",
+        color:"gold",
+    }
+
 
 },
 {name:"Component-Button"}

@@ -17,6 +17,7 @@ const useStyles = createUseStyles({
         flexWrap:"wrap",
         display:"flex",
         gap:"50px",
+        width:"100%",
     }
     
 

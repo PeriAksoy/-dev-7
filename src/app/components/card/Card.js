@@ -5,6 +5,7 @@ import { useLanguage } from "../../context/LanguageContext";
 import Button from "../button/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { useAuth } from '../../context/AuthContext';
 
 const Card = ({
   children,
@@ -13,11 +14,14 @@ const Card = ({
   username,
   bookimg,
   bookname,
-  showbtn = false
+  showbtn = false,
+  showIcon = false,
 }) => {
   const { theme } = useTheme();
   const classes = useStyle({ theme });
   const {language} = useLanguage();
+  const {loggedIn} = useAuth();
+
 
   return (
     <div className={classes.container}>
@@ -27,6 +31,7 @@ const Card = ({
           {username}
           <div className={classes.textcontainer}>{text}</div>
           {showbtn && <Button title={language.translations.removefavorites} variant="remove"/>}
+          {loggedIn && showIcon && <Button title={language.translations.addtofavorites} variant="addfav" icon={faStar}/>}
         </div>
         <div className={classes.bookcontainer}>
           <div className={classes.bookImgContainer}>
