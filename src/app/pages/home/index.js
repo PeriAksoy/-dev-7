@@ -1,24 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTheme } from "../../context/ThemeContext";
-import { useLanguage } from "../../context/LanguageContext";
 import useStyles from "./stylesheet";
 import Card from "../../components/card/Card";
 import { useAuth } from "../../context/AuthContext";
+import { useEffect } from "react";
+import axios from "axios";
+
 
 const Home = () =>{
     
     const {theme} = useTheme();
     const classes = useStyles({theme});
-    const {language} = useLanguage();
     const {loggedIn} = useAuth();
+    const [cards,setCards] = useState([])
     
+    //Alıntıları getir 
+
+    useEffect (()=>{
+      const getQuotation = async ()=>{
+        const token = localStorage.getItem("token");
+        if(loggedIn){
+          const response = await axios.get("http://localhost:3001/quotation/all",{
+            headers:{
+              "Authorization":`Bearer ${token}`
+            }
+          })
+          setCards(response.data);
+        }
+      }
+      getQuotation();
+    },[loggedIn]);
+
     return <div className={classes.container}>
       <div className={classes.cards}>
-        <Card pp="/assest/images/userpp.jpg" username="username" text='"İnsanlar şehir gibiydi. Bazı kötü yönleri var diye bütün şehirden nefret etmezdiniz. Sevmediğiniz yanları, birkaç tane tehlikeli ara sokağı ve mahallesi olabilirdi ama bir şehri yaşanır kılan şey iyi yönleriydi."' bookimg="/assest/images/kitap.jpeg" bookname="Gece Yarısı Kütüphanesi" showIcon="true"/>
-
-        <Card pp="/assest/images/userpp.jpg" username="username" text='"İnsanlar şehir gibiydi. Bazı kötü yönleri var diye bütün şehirden nefret etmezdiniz. Sevmediğiniz yanları, birkaç tane tehlikeli ara sokağı ve mahallesi olabilirdi ama bir şehri yaşanır kılan şey iyi yönleriydi."' bookimg="/assest/images/kitap.jpeg" bookname="Gece Yarısı Kütüphanesi" showIcon="true"/>
-     
-        </div>
+      {cards.map((card) => (
+        <Card 
+            key={card.id} 
+            pp="/assest/images/userpp.jpg" 
+            username={`User :${card.username}`}  
+            text={card.text} 
+            bookimg="/assest/images/kitap.jpeg" 
+            bookname={card.book} 
+            showIcon="true"
+        />
+       ))}
+      </div>
     </div>;
 
 };

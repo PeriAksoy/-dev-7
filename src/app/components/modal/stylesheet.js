@@ -3,7 +3,7 @@ import { clickEvent } from "../../themes/helpers";
 
 
 const useStyle = createUseStyles({
-    overlay: {
+       overlay: {
         backgroundColor: "rgba(0, 0, 0, 0.5)",
         justifyContent: "center",
         alignItems: "center",
@@ -39,7 +39,7 @@ const useStyle = createUseStyles({
         color:"white",
         top: "10px",
       },
-      input:{
+      bookname:{
         border: "0px solid #FFFFFF",
         borderRadius:"8px",
         height:"40px",
@@ -58,6 +58,20 @@ const useStyle = createUseStyles({
         justifyContent:"flex-end",
         display:"flex",
       },
+      quotation:{
+        width:"500px",
+        height:"50px",
+      },
+      book:{
+        height:"40px",
+        width:"200px"
+      },
+      author:{
+        border: "0px solid #FFFFFF",
+        borderRadius:"8px",
+        height:"40px",
+        width:"400px",
+      }
 
 });
 

@@ -47,11 +47,12 @@ const useStyle= createUseStyles({
         fontSize:"20px",
     },
     book:{
-        justifyContent:"center",
+        justifyContent:"space between",
         flexDirection:"column",
         alignItems:"center",
         textAlign:"center",
         display:"flex",
+        width:"100%",
     },
     buttons:{
         display:"flex",

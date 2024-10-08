@@ -1,20 +1,59 @@
-import React from "react";
 import { useTheme } from "../../context/ThemeContext";
-import { useLanguage } from "../../context/LanguageContext";
-import useStyles from "./stylesheet";
 import Card from "../../components/card/Card";
+import useStyles from "./stylesheet";
+import { useEffect } from "react";
+import { useState } from "react";
+import axios from "axios";
+import React from "react";
 
 const Favorites = () =>{
-    
+
     const {theme} = useTheme();
     const classes = useStyles({theme});
-    const {language} = useLanguage();
+    const [cards,setCards] = useState([]);
+    const [refresh,setRefresh]=useState(false);
+    
+    //Favorileri getir 
+
+    useEffect (()=>{
+      const getFavorites = async ()=>{
+        const token = localStorage.getItem("token");
+  
+          const response = await axios.get("http://localhost:3001/favorites",{
+            headers:{
+              "Authorization":`Bearer ${token}`
+            }
+          })
+          console.log(response.data);
+          setCards(response.data);
+        }
+      
+      getFavorites();
+    },[refresh]);
+
+    //Favorilerden çıkar
+    
+    const DeleteCard = async (id) =>{
+        await axios.delete(`http://localhost:3001/favorites/${id}`);
+        setRefresh(prev => !prev);
+    };
 
     return <div className={classes.container}>
         <div className={classes.cards}>
-        <Card pp="/assest/images/userpp.jpg" username="kullanici" text='"İnsanlar şehir gibiydi. Bazı kötü yönleri var diye bütün şehirden nefret etmezdiniz. Sevmediğiniz yanları, birkaç tane tehlikeli ara sokağı ve mahallesi olabilirdi ama bir şehri yaşanır kılan şey iyi yönleriydi."' bookimg="/assest/images/kitap.jpeg" bookname="Gece Yarısı Kütüphanesi" showbtn={true}/>   
-
-        <Card pp="/assest/images/userpp.jpg" username="kullanici" text='"İnsanlar şehir gibiydi. Bazı kötü yönleri var diye bütün şehirden nefret etmezdiniz. Sevmediğiniz yanları, birkaç tane tehlikeli ara sokağı ve mahallesi olabilirdi ama bir şehri yaşanır kılan şey iyi yönleriydi."' bookimg="/assest/images/kitap.jpeg" bookname="Gece Yarısı Kütüphanesi" showbtn={true}/>   
+        {cards.map((card) => (
+        <Card 
+            key={card.id} 
+            pp="/assest/images/userpp.jpg" 
+            username={`User :${card.username}`}  
+            text={card.text} 
+            bookimg="/assest/images/kitap.jpeg" 
+            bookname={card.book} 
+            showbtn="true"
+            onDelete={()=>{
+                DeleteCard (card.id)  
+            }}
+        />
+       ))}
         </div>
     </div>;
 };

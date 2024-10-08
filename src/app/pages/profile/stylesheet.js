@@ -17,9 +17,10 @@ const useStyles = createUseStyles({
         backgroundColor:({theme}) => theme.colors.profilecard,
         borderRadius:"10px",
         alignItems:"center",
+        marginTop:"50px",
         height:"300px",
-        width:"1500px",
         display:"flex",
+        width:"80%",
         gap:"50px",
     },
     profileImage: {
@@ -37,11 +38,11 @@ const useStyles = createUseStyles({
         color: ({ theme }) => theme.colors.cardtext,
     },
     btndiv:{
-        display:"flex",
         justifyContent:"flex-end",
-        width:"1500px",
         marginRight:"50px",
-        marginTop:"100px"
+        marginTop:"100px",
+        display:"flex",
+        width:"1500px",
     },
     logoutbtn:{
         border: "0px solid #FFFFFF",
@@ -52,6 +53,32 @@ const useStyles = createUseStyles({
         height:"40px",
         width:"100px",
         color:"white",
+        ...clickEvent(),
+    },
+    textCards:{
+        flexDirection:"column",
+        flexWrap:"wrap",
+        display:"flex",
+        width:"70%",
+
+    },
+    userInfo:{
+        flexDirection:"column",
+        fontWeight:"bold",
+        display:"flex",
+        gap:"15px",
+
+    },
+    addbutton:{
+        backgroundColor :({theme}) => theme.colors.addbutton,
+        border: "0px solid #FFFFFF",
+        borderRadius:"50%",
+        position:"fixed",
+        fontSize:"40px",
+        height:"80px",
+        bottom:"50px",
+        right:"50px",
+        width:"80px",
         ...clickEvent(),
     }
 

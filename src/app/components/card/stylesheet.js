@@ -17,7 +17,7 @@ const useStyle = createUseStyles({
         justifyContent:"center",
         height:"300px",
         display:"flex",
-        width:"1500px",
+        width:"100%",
         padding:"30px",
         gap:"40px",
         "& span":{
@@ -25,6 +25,7 @@ const useStyle = createUseStyles({
             fontSize:"20px",
             color:"white",
         },
+        marginTop:"50px",
     },
     cardcontent:{
         flexDirection:"column",
@@ -52,9 +53,11 @@ const useStyle = createUseStyles({
         width:"100px", 
     },
     bookImgContainer:{
-        justifyContent:"center",
-        alignItems:"center",
+        justifyContent:"flex-end",
+        alignItems:"flex-end",
         display:"flex",
+        height:"40px",
+        width:"100px",
     },
     bookcontainer:{
         color:({theme})=> theme.colors.cardtext,
@@ -66,7 +69,7 @@ const useStyle = createUseStyles({
         marginTop:"20px",
         fontSize:"20px",
         display:"flex",
-        gap:"30px"
+        gap:"30px",
     },
    
 });

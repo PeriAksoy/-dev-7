@@ -10,6 +10,7 @@ const Button = ({
   title,
   icon,
   type = "button",
+  onClick,
   ...props
 }) => {
   const { theme } = useTheme();
@@ -17,7 +18,7 @@ const Button = ({
 
   return (
     <div className={classes.container}>
-    <button type={type}className={classes[variant]}>
+    <button type={type}className={classes[variant]} onClick={onClick}>
     {icon && <FontAwesomeIcon icon={faStar} className={classes.icon} /> }
     <span>{title}</span>{children}
     </button>
