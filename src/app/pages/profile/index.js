@@ -69,7 +69,8 @@ const Profile = () =>{
 
     //Card kaydetme
 
-    const SaveCard = () =>{
+    const SaveCard = (newcard) =>{
+        setCards([...cards,newcard]);
         setRefresh(prev => !prev);
         setSelectedCard(null);
         closeModal();

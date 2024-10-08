@@ -22,6 +22,7 @@ const Books = () => {
 
     const SaveBook = (newBook)=>{
         setBooks([...books,newBook]);
+        console.log(newBook);
         setRefresh(prev => !prev);
         closeModal();
     }
